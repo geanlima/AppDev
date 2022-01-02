@@ -16,7 +16,7 @@ Caso de sucesso
 7. Sistema retorna uma mensagem de erro inesperado
    
    Exceção - Falha no servidor
-8. Sistema retorna uma mensagem de erro inesperado
+8. 🟢 Sistema retorna uma mensagem de erro inesperado
 
    Exceção - Credenciais inválidas
 9. Sistema retorna uma mensagem de erro informando que as credenciais estão erradas
