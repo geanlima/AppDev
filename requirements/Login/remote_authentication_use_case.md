@@ -19,4 +19,4 @@ Caso de sucesso
 8. 🟢 Sistema retorna uma mensagem de erro inesperado
 
    Exceção - Credenciais inválidas
-9. Sistema retorna uma mensagem de erro informando que as credenciais estão erradas
+9. 🟢 Sistema retorna uma mensagem de erro informando que as credenciais estão erradas

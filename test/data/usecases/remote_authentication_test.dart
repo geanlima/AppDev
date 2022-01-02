@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:faker/faker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -37,7 +35,7 @@ void main() {
         method: 'post',
         body: {'email': params.email, 'password': params.secret}));
   });
-  test('Should throw UnexpectedError if HttpClient returns 400', () async {
+  test('returns 400: Should throw UnexpectedError if HttpClient', () async {
     when(httpClient.request(
             url: anyNamed('url'),
             method: anyNamed('method'),
@@ -48,7 +46,7 @@ void main() {
 
     expect(future, throwsA(DomainError.unexpected));
   });
-  test('Should throw UnexpectedError if HttpClient returns 404', () async {
+  test('returns 404: Should throw UnexpectedError if HttpClient', () async {
     when(httpClient.request(
             url: anyNamed('url'),
             method: anyNamed('method'),
@@ -59,7 +57,7 @@ void main() {
 
     expect(future, throwsA(DomainError.unexpected));
   });
-  test('Should throw UnexpectedError if HttpClient returns 500', () async {
+  test('returns 500: Should throw UnexpectedError if HttpClient', () async {
     when(httpClient.request(
             url: anyNamed('url'),
             method: anyNamed('method'),
@@ -69,5 +67,17 @@ void main() {
     final future = sut.auth(params);
 
     expect(future, throwsA(DomainError.unexpected));
+  });
+  
+  test('returns 401: Should throw InvalidCrendentialsError if HttpClient', () async {
+    when(httpClient.request(
+            url: anyNamed('url'),
+            method: anyNamed('method'),
+            body: anyNamed('body')))
+        .thenThrow(HttpError.unauthorized);
+
+    final future = sut.auth(params);
+
+    expect(future, throwsA(DomainError.invalidCredentials));
   });
 }
