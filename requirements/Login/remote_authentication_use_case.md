@@ -13,7 +13,7 @@ Caso de sucesso
 6. 🟢 Sistema retorna uma mensagem de erro inesperado
 
    Exceção - Resposta inválida
-7. Sistema retorna uma mensagem de erro inesperado
+7. 🟢 Sistema retorna uma mensagem de erro inesperado
    
    Exceção - Falha no servidor
 8. 🟢 Sistema retorna uma mensagem de erro inesperado
